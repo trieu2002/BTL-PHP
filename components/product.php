@@ -29,20 +29,22 @@
 
   $result = $connect->query($sql);
 ?>
-<div class="grid grid-cols-4">
-    <?php foreach($result as $item) : ?>
-    <div class="border border-black-300">
-        <a href="?option=productDetail&id=<?=$item['id']?>">
-            <img src="images/<?= $item['image'] ?>" alt=""></a>
-        <p>Tien : <?= $item['price'] ?></p>
+<div class="w-[1170px] mx-auto">
+    <div class="grid grid-cols-4">
+        <?php foreach($result as $item) : ?>
+        <div class="border border-black-300">
+            <a href="?option=productDetail&id=<?=$item['id']?>">
+                <img src="images/<?= $item['image'] ?>" alt=""></a>
+            <p>Tien : <?= $item['price'] ?></p>
+        </div>
+        <?php endforeach; ?>
     </div>
-    <?php endforeach; ?>
-</div>
-<div>
-    <?php for($i=1;$i<=$totalPage;$i++) :?>
-    <a class="<?= empty($_GET['page']) && $i==1 || ($page==$i) ? "active" : "" ?>"
-        href="?option=<?= $option ?>&page=<?= $i ?>"><?= $i ?></a>
-    <?php endfor ; ?>
+    <div>
+        <?php for($i=1;$i<=$totalPage;$i++) :?>
+        <a class="<?= empty($_GET['page']) && $i==1 || ($page==$i) ? "active" : "" ?>"
+            href="?option=<?= $option ?>&page=<?= $i ?>"><?= $i ?></a>
+        <?php endfor ; ?>
+    </div>
 </div>
 <style>
 .active {

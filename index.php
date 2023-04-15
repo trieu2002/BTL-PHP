@@ -26,8 +26,9 @@
     </div>
     <div class="w-[100%] bg-green-500 h-[50px]">
         <?php include "./components/Nav.php"; ?>
-        <div class="w-[1170px] mx-auto">
-            <?php
+
+
+        <?php
             if(isset($_GET['option'])){
                 switch($_GET['option']){
                     case 'register':
@@ -64,7 +65,7 @@
         ?>
 
 
-        </div>
+
 
     </div>
 </body>
