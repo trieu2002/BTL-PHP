@@ -29,36 +29,43 @@
 
 <?php foreach($result as $item) : ?>
 <div class="w-[1170px] mx-auto bg-white mt-[10px]">
-    <form action="?option=cart" method="get">
-        <div class="flex flex-row justify-center items-center">
-            <!-- Ảnh sản phẩm -->
-            <div class="w-1/2 h-[450px] border border-black-300 flex justify-center items-center ">
-                <img src="images/<?=$item['image']?>" alt="Product"
-                    class="w-[400px] scale-1 h-[300px] hover:rotate-180 hover-zoom">
-            </div>
+    <div class="flex flex-row justify-center items-center">
+        <!-- Ảnh sản phẩm -->
+        <div class="w-1/2 h-[450px] border border-black-300 flex justify-center items-center ">
+            <img src="images/<?=$item['image']?>" alt="Product"
+                class="w-[400px] scale-1 h-[300px] hover:rotate-180 hover-zoom">
+        </div>
 
-            <!-- Thông tin sản phẩm -->
-            <div class="w-1/2 mx-4">
-                <h1 class="text-3xl font-bold mb-2">Tên sản phẩm : <?=$item['name']?></h1>
-                <h2 class="text-2xl font-semibold mb-2">Giá sản phẩm : <?=$item['price']?></h2>
-                <p class="text-lg mb-4">Mô tả sản phẩm : <?=$item['description']?></p>
-
+        <!-- Thông tin sản phẩm -->
+        <div class="w-1/2 mx-4">
+            <h1 class="text-3xl font-bold mb-2">Tên sản phẩm : <?=$item['name']?></h1>
+            <h2 class="text-2xl font-semibold mb-2">Giá sản phẩm : <?=$item['price']?></h2>
+            <p class="text-lg mb-4">Mô tả sản phẩm : <?=$item['description']?></p>
+            <form method="get">
                 <div class="flex flex-row items-center mb-4">
                     <button class="bg-blue-300 hover:bg-orange-400 text-gray-800 font-bold py-2 px-4 rounded-l">
                         -
                     </button>
-                    <input type="text" class="border text-center w-[100px] border border-black-400 h-[42px]" value="1">
+                    <input type="hidden" name="option" value="cart">
+                    <input type="hidden" name="id" value="<?=$item['id']?>">
+                    <input type="text" name="qty" class="border text-center w-[100px] border border-black-400 h-[42px]"
+                        value="1">
                     <button class="bg-blue-300 hover:bg-orange-400 text-gray-800 font-bold py-2 px-4 rounded-r">
                         +
                     </button>
                 </div>
-
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Mua ngay
                 </button>
-            </div>
+            </form>
+
+
+
+
+
         </div>
-    </form>
+    </div>
+
 </div>
 <style>
 .hover-zoom {

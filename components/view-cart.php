@@ -46,15 +46,28 @@
                     </div>
                 </td>
                 <td class="border px-4 py-2 text-center">
-                    <input type="text" value="<?= $value['qty'] ?>" class="w-16 py-1 px-2 border rounded">
+                    <form method="get">
+                        <input type="hidden" name="option" value="cart">
+                        <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="id" value="<?=$value['id']?>">
+                        <input type="text" name="qty" value="<?= $value['qty'] ?>"
+                            class="w-16 py-1 px-2 border rounded">
+                        <button type="submit" class="border px-4 py-2 bg-green-500">Update</button>
+                    </form>
                 </td>
-                <td class="border px-4 py-2 text-center"><?=number_format($value['price'],0,'.','.') ?></td>
-                <td class="border px-4 py-2 text-center"><?= number_format($value['price'] * $value['qty'],0,'.','.') ?>
-                </td>
+                <td class="border px-4 py-2 text-center"><?=number_format($value['price'],0,'.','.') ?>đ</td>
                 <td class="border px-4 py-2 text-center">
-                    <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-                        <a href="?option=removeCartItem&id=<?= $key ?>">Remove</a>
-                    </button>
+                    <?= number_format($value['price'] * $value['qty'],0,'.','.') ?>đ</td>
+                đ</td>
+                <td class="border px-4 py-2 text-center">
+                    <form method="get">
+                        <input type="hidden" name="option" value="cart">
+                        <input type="hidden" name="action" value="remove">
+                        <input type="hidden" name="id" value="<?=$value['id']?>">
+                        <button class=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                            Remove
+                        </button>
+                    </form>
 
                 </td>
             </tr>
@@ -73,7 +86,7 @@
 
                 </td>
                 <td colspan="2" class="text-right font-bold py-4 text-center">Total:</td>
-                <td class="font-bold py-4 text-center"><?=number_format($total,0,'.','.') ?></td>
+                <td class="font-bold py-4 text-center"><?=number_format($total,0,'.','.') ?>đ</td>
                 <td> <button class="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                         <a href="?option=home">Tiếp tục mua hàng</a>
                     </button></td>

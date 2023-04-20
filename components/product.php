@@ -39,7 +39,7 @@
             <div class="p-4">
                 <p class="font-medium text-lg text-gray-900"><?= $item['name'] ?></p>
                 <p class="text-gray-600 text-base"><?= $item['description'] ?></p>
-                <p class="font-bold text-lg mt-4">$<?= $item['price'] ?></p>
+
             </div>
         </div>
 
