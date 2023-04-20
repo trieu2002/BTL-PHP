@@ -58,7 +58,7 @@
                 <td class="border px-4 py-2 text-center"><?=number_format($value['price'],0,'.','.') ?>đ</td>
                 <td class="border px-4 py-2 text-center">
                     <?= number_format($value['price'] * $value['qty'],0,'.','.') ?>đ</td>
-                đ</td>
+                </td>
                 <td class="border px-4 py-2 text-center">
                     <form method="get">
                         <input type="hidden" name="option" value="cart">
