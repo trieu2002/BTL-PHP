@@ -1,5 +1,6 @@
 <?php include "./db/connect.php"; ?>
 <?php  
+
  $sql="select * from logo";
  $result=$connect->query($sql);
  $logo=mysqli_fetch_array($result);
@@ -18,7 +19,7 @@
             <form action="" method="get" class="w-[100%]">
                 <input type="hidden" name="option" value="product">
                 <input type="text"
-                    class="w-[100%]  h-[40px]  border border-green-500 placeholder:pl-[10px] outline-none hover:outline-none"
+                    class="w-[100%] h-[40px] border border-green-500 placeholder:pl-[10px] outline-none hover:outline-none"
                     placeholder="Tìm Kiếm" name="search">
                 <span class="w-[1%]  p-[0px]">
                     <button type="submit"
@@ -42,9 +43,22 @@
             </div>
         </div>
         <div class="relative mt-[10px] relative">
-            <span class="w-[30%] text-[25px] text-green-500"> <i class="fa-solid fa-cart-shopping"></i></span>
+            <span class="w-[30%] text-[25px] text-green-500"> <a href="?option=view-cart"><i
+                        class="fa-solid fa-cart-shopping"></i></a></span>
             <span
-                class="absolute right-[-3px] w-[20px] h-[20px] bg-orange-600 rounded-[100%] text-white leading-[20px] text-center">0</span>
+                class="absolute right-[-3px] w-[20px] h-[20px] bg-orange-600 rounded-[100%] text-white leading-[20px] text-center">
+                <?php
+                  $totalQty = 0;
+                  if (!empty($_SESSION['cart'])) {
+                    foreach ($_SESSION['cart'] as $item) {
+                      $totalQty += $item['qty'];
+                    }
+                  }
+
+                ?>
+                <?= !empty($_SESSION['cart']) ? $totalQty : 0 ?>
+
+            </span>
         </div>
     </div>
 </header>

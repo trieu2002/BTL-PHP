@@ -32,6 +32,7 @@ $result = $connect->query($sql);
         <li><a href="" class="text-white text-[18px] px-[25px]">Kênh tạp hóa</a></li>
         <li><a href="" class="text-white text-[18px] px-[25px]">Tin tức</a></li>
         <li><a href="" class="text-white text-[18px] px-[25px]">Liên hệ</a></li>
+        <li><a href="?option=view-cart" class="text-white text-[18px] px-[25px]">Giỏ hàng</a></li>
     </ul>
 </div>
 <style>

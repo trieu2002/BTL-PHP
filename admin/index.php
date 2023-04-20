@@ -32,6 +32,14 @@
     <!-- summernote -->
     <link rel="stylesheet" href="./assets/plugins/summernote/summernote-bs4.min.css">
 </head>
+<style>
+.img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+}
+</style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -202,7 +210,11 @@
                         <?php if(empty($_SESSION['admin'])) :?>
                         <a href="singin.php">Đăng nhập tài khoản</a>
                         <?php else : ?>
-                        <a href="index.php" class="mr-4">Hello : <?=$_SESSION['admin']?></a>
+                        <img class="img" src="images/<?=$_SESSION['image']?>" alt="">
+                        <a href="index.php" class="mr-4"><?=$_SESSION['admin']?>
+
+                        </a>
+
                         <a href="logout.php">Đăng xuất</a>
                         <?php endif; ?>
                     </div>
@@ -298,6 +310,31 @@
 
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="?option=list-comment" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    Quản lý tài khoản User
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="?option=list-comment" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách tài khoản User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?option=list-comment" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm tài khoản User</p>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
 
 
                     </ul>
@@ -326,6 +363,12 @@
                           case 'product-delete':
                                include "./modules/product/product-delete.php";
                                break;
+                          case 'add-product':
+                            include "./modules/product/product-add.php";
+                            break;
+                        case 'product-edit':
+                            include "./modules/product/product-update.php";
+                            break;
                           case 'list-comment':
                                  include "./modules/comments/comment-list.php";
                                  break;

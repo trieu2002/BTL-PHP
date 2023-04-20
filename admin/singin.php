@@ -15,6 +15,7 @@ include "db/connect.php";
         $result=mysqli_fetch_array($result);
         var_dump($result);
         $_SESSION['admin']=$result['name'];
+        $_SESSION['image']=$result['image'];
          header('location:index.php');
          exit;
         
@@ -26,6 +27,14 @@ include "db/connect.php";
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+body {
+    background-image: url("http://congthucphache.com/wp-content/uploads/2020/10/z2137637736294_73fe8c92389ba1f31e982a8349a0c0c8.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -36,9 +45,9 @@ include "db/connect.php";
 </head>
 
 <body>
-    <div class="px-[54px] py-[15px] bg-[#fff] mb-[40px] truncate w-[60%] mx-auto mt-[50px]">
-        <div>
-            <h1 class="m-[0px] p-[0px] text-[22px] font-bold text-center">ĐĂNG NHẬP TÀI KHOẢN</h1>
+    <div class="mt-[80px] px-[54px] py-[15px] bg-white mb-[40px] rounded-[20px] truncate w-[50%] mx-auto  h-[500px]">
+        <div class="mt-[20px]">
+            <h1 class="m-[0px] p-[0px] text-[22px] font-bold text-center">ĐĂNG NHẬP TÀI KHOẢN ADMIN</h1>
         </div>
         <div class="mr-[-15px] ml-[-15px] w-[80%] ml-[20%]">
             <form action="" method="post" class="w-[100%] ">

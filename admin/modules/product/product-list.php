@@ -2,7 +2,7 @@
 ob_start();
 include "./db/connect.php";
 
-$sql_count = "SELECT COUNT(*) AS total FROM products WHERE status = 1";
+$sql_count = "SELECT COUNT(*) AS total FROM products ";
 $search=isset($_GET['search']) ? $_GET['search'] : "";
 $result_count = $connect->query($sql_count);
 $total = $result_count->fetch_assoc()['total'];
@@ -20,7 +20,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $start = ($current_page - 1) * $per_page;
 
 // Lấy danh sách sản phẩm cho trang hiện tại
-$sql = "SELECT p.id, p.name, p.image, p.price, p.desc, c.name AS categories_name, p.status
+$sql = "SELECT p.id, p.name, p.image, p.price, p.description, c.name AS categories_name, p.status
         FROM products p
         JOIN categories c ON p.cateId = c.id
         ";
@@ -61,7 +61,7 @@ $result = $connect->query($sql);
         <td><?=$item['name'] ?></td>
         <td><img src="images/<?=$item['image']?>" width="80" alt=""></td>
         <td><?=$item['price']?></td>
-        <td><?=$item['desc']?></td>
+        <td><?=$item['description']?></td>
         <td>
             <?=$item['categories_name']?>
 

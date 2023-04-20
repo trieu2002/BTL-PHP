@@ -15,6 +15,11 @@
 
     <title>Tobee Food</title>
 </head>
+<style>
+.bg {
+    background-color: #ebe9e942;
+}
+</style>
 
 <body>
     <div class="w-[100%] bg-green-500">
@@ -27,8 +32,9 @@
     <div class="w-[100%] bg-green-500 h-[50px]">
         <?php include "./components/Nav.php"; ?>
 
+        <div class="w-[100%] bg">
 
-        <?php
+            <?php
             if(isset($_GET['option'])){
                 switch($_GET['option']){
                     case 'register':
@@ -52,6 +58,12 @@
                     case 'productDetail':
                         include "./pages/productDetail.php";
                         break;
+                    case 'cart':
+                        include "./pages/cart.php";
+                        break;
+                   case 'view-cart':
+                      include "./components/view-cart.php";
+                      break;
                     
                         
 
@@ -64,6 +76,7 @@
         
         ?>
 
+        </div>
 
 
 
