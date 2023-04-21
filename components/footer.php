@@ -6,9 +6,9 @@
   
 ?>
 
-<div class="w-[1170px] mx-auto grid grid-cols-4 gap-8">
+<div class="w-[1170px] mx-auto grid grid-cols-4 gap-8 mt-10">
     <div>
-        <h2 class="text-uppercase">NGUYÊN LIỆU PHA CHẾ</h2>
+        <h2 class="font-bold">NGUYÊN LIỆU PHA CHẾ</h2>
         <ul>
             <?php while ($item = mysqli_fetch_array($result)): ?>
             <li><?= $item['name'] ?>.</li>
@@ -20,7 +20,7 @@
         </ul>
     </div>
     <div>
-        <h2>VỀ CHÚNG TÔI</h2>
+        <h2 class="font-bold">VỀ CHÚNG TÔI</h2>
         <ul>
             <li>Về chúng tôi</li>
             <li>Đối tác khách hàng</li>
@@ -28,7 +28,7 @@
         </ul>
     </div>
     <div>
-        <h2>CHÍNH SÁCH</h2>
+        <h2 class="font-bold">CHÍNH SÁCH</h2>
         <ul>
             <li>Giao hàng miễn phí</li>
             <li>Chính sách đổi trả</li>
@@ -39,7 +39,7 @@
         </ul>
     </div>
     <div>
-        <h2>CHƯƠNG TRÌNH KHUYỄN MÃI</h2>
+        <h2 class="font-bold">CHƯƠNG TRÌNH KHUYỄN MÃI</h2>
         <ul>
             <li>Ưu đãi khách hàng mới</li>
             <li>Khuyễn mãi đặc biệt</li>
