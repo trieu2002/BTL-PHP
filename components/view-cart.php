@@ -92,6 +92,10 @@
                     </button></td>
             </tr>
         </tfoot>
+        <div class="flex justify-end mt-6 mr-12">
+            <button class="bg-pink-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                <a href="?option=check-out">Checkout</a>
+            </button></ </div>
+        </div>
     </table>
     <?php endif;?>
-</div>

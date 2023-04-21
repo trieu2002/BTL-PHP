@@ -335,6 +335,31 @@
 
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="?option=list-comment" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    Quản lý đơn hàng
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="?option=list-comment" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh đơn hàng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?option=list-comment" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm tài khoản User</p>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
 
 
                     </ul>

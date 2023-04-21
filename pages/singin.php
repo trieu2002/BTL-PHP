@@ -14,6 +14,7 @@ if(isset($_POST['btn'])){
     }else{
         $result=mysqli_fetch_array($result);
         $_SESSION['member']=$result['username'];
+        $_SESSION['id']=$result['id'];
          header('location:?option=home');
          exit;
         

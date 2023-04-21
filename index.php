@@ -64,7 +64,15 @@
                    case 'view-cart':
                       include "./components/view-cart.php";
                       break;
-                    
+                    case 'check-out':
+                        include "./pages/check-out.php";
+                        break;
+                        case '*':
+                            include "./pages/pageError.php";
+                            break;
+                        default:
+                            include "./pages/pageError.php";
+                            break;
                     
                         
 
