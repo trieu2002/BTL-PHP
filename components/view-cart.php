@@ -52,7 +52,7 @@
                         <input type="hidden" name="id" value="<?=$value['id']?>">
                         <input type="text" name="qty" value="<?= $value['qty'] ?>"
                             class="w-16 py-1 px-2 border rounded">
-                        <button type="submit" class="border px-4 py-2 bg-green-500">Update</button>
+                        <button type="submit" class="border px-4 py-1 rounded-[5px] bg-green-500">Update</button>
                     </form>
                 </td>
                 <td class="border px-4 py-2 text-center"><?=number_format($value['price'],0,'.','.') ?>đ</td>
