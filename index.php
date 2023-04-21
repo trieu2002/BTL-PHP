@@ -34,6 +34,7 @@
 
         <div class="w-[100%] bg">
 
+
             <?php
             if(isset($_GET['option'])){
                 switch($_GET['option']){
@@ -67,7 +68,7 @@
                     case 'check-out':
                         include "./pages/check-out.php";
                         break;
-                        case '*':
+                    case '*':
                             include "./pages/pageError.php";
                             break;
                         default:
@@ -81,12 +82,12 @@
             }else{
                 include "./pages/home.php";
             }
-
+            
         
         ?>
-
+            <?php include "./components/footer.php" ?>
+            <?php include "./components/copyright.php"; ?>
         </div>
-
 
 
     </div>
