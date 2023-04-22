@@ -16,7 +16,7 @@
 }
 
 ?>
-<div class="w-[1170px] mx-auto mt-8">
+<div class="w-[1170px] mx-auto mt-8 bg-white">
     <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
     <?php if(empty($_SESSION['cart'])) :?>
     <h1 class="font-bold text-[20px] text-center">Giỏ hàng trống!</h1>
@@ -24,6 +24,7 @@
     <table class="table-auto w-full">
         <thead>
             <tr>
+                <th class="px-4 py-2">STT</th>
                 <th class="px-4 py-2">Product</th>
                 <th class="px-4 py-2">Quantity</th>
                 <th class="px-4 py-2">Price</th>
@@ -34,6 +35,7 @@
         <tbody>
             <?php foreach ($cart as $key => $value): ?>
             <tr>
+                <td class="border px-4 py-2 text-center"><?=$count++?></td>
                 <td class="border px-4 py-2">
                     <div class="flex items-center">
                         <div class="w-20 h-20 bg-gray-200 mr-4">
@@ -85,7 +87,7 @@
                     </form>
 
                 </td>
-                <td colspan="2" class="text-right font-bold py-4 text-center">Total:</td>
+                <td colspan="3" class="text-right font-bold py-4 text-center">Total:</td>
                 <td class="font-bold py-4 text-center"><?=number_format($total,0,'.','.') ?>đ</td>
                 <td> <button class="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                         <a href="?option=home">Tiếp tục mua hàng</a>
