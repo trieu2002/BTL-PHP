@@ -29,8 +29,8 @@ include "db/connect.php";
     }
     unset($_SESSION['cart']);
 
-    echo "<script>alert('Bạn đã đặt hàng thành công!');</script>";
-    header("location:?option=home");
+    echo "<script>alert('Bạn đã đặt hàng thành công!');
+    window.location.href='?option=home';</script>";
 }
  }
  

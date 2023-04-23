@@ -27,7 +27,11 @@
    }
    $action=isset($_GET['action']) ? $_GET['action'] : "";
    if($action=='update'){
-    $_SESSION['cart'][$id]['qty']=$qty;
+    if($_SESSION['cart'][$id]['qty']<0){
+      $_SESSION['cart'][$id]['qty']=1;
+    }else{
+      $_SESSION['cart'][$id]['qty']=$qty; 
+    }
    }
    if($action=='remove'){
     unset($_SESSION['cart'][$id]);

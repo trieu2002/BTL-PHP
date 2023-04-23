@@ -7,7 +7,7 @@
           $productId=$_GET['id'];
           $memberId=mysqli_fetch_array($connect->query("select * from member where username='".$_SESSION['member']."'"));
           $memberId=$memberId['id'];
-          echo $content.$productId.$memberId;
+          
           $sql="INSERT INTO comments (memberId, productId, date, content) VALUES ($memberId, $productId, now(), '$content')";
           $connect->query($sql);
       else :
@@ -28,7 +28,7 @@
 ?>
 
 <?php foreach($result as $item) : ?>
-<div class="w-[1170px] mx-auto bg-white mt-[10px]">
+<div class="w-[1170px] mx-auto bg-white mt-[10px] rounded-lg shadow-sm">
     <div class="flex flex-row justify-center items-center">
         <!-- Ảnh sản phẩm -->
         <div class="w-1/2 h-[450px] border border-black-300 flex justify-center items-center ">
@@ -39,7 +39,7 @@
         <!-- Thông tin sản phẩm -->
         <div class="w-1/2 mx-4">
             <h1 class="text-3xl font-bold mb-2">Tên sản phẩm : <?=$item['name']?></h1>
-            <h2 class="text-2xl font-semibold mb-2">Giá sản phẩm : <?=$item['price']?></h2>
+            <h2 class="text-2xl font-semibold mb-2">Giá sản phẩm : <?=number_format($item['price'],0,'.','.')?>đ</h2>
             <p class="text-lg mb-4">Mô tả sản phẩm : <?=$item['description']?></p>
             <form method="get">
                 <div class="flex flex-row items-center mb-4">
@@ -75,7 +75,7 @@
 </style>
 <?php endforeach; ?>
 <div class="w-[1170px] mx-auto">
-    <div class="bg-white border rounded-lg p-4 mt-[20px]">
+    <div class="bg-white border rounded-lg shadow-sm p-4 mt-[20px]">
         <h2 class="text-lg font-semibold mb-4">Comments</h2>
         <?php
     if(isset($_GET['id'])){

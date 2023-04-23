@@ -5,11 +5,11 @@
   $img=mysqli_fetch_all($result);
 ?>
 <div class="swiper-container w-[100%] h-auto truncate z-10">
-    
+
     <div class="swiper-wrapper z-10">
         <?php foreach($img as $item) :?>
         <div class="swiper-slide"><img src="images/<?= $item[1] ?>"></div>
-        <?php endforeach ; ?>
+        <?php endforeach ;?>
     </div>
 
 
@@ -29,7 +29,7 @@ var swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     autoplay: {
-        delay: 2000,
+        delay: 3000,
     },
 });
 </script>
