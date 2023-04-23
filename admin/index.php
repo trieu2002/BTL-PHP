@@ -320,13 +320,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="?option=list-comment" class="nav-link">
+                                    <a href="?option=list-user" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Danh sách tài khoản User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="?option=list-comment" class="nav-link">
+                                    <a href="?option=add-user" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Thêm tài khoản User</p>
                                     </a>
@@ -402,6 +402,9 @@
                             break;
                           case 'comments-delete':
                             include "./modules/comments/comment-delete.php";
+                            break;
+                         case 'list-user':
+                            include "./modules/user/list-user.php";
                             break;
                           
  

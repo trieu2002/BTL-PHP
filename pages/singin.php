@@ -7,7 +7,7 @@ if(isset($_POST['btn'])){
     $err=[];
     $password=$_POST['password'];
 
-    $sql="select * from member where username='$username' and password='$password'";
+    $sql="select * from member where username='$username' and password='$password and  stutus=1'";
     $result=$connect->query($sql);
     if(mysqli_num_rows($result)==0){
         $err['error']="Tên tài khoản or mật khẩu không đúng";

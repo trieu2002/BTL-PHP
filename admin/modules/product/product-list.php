@@ -61,7 +61,7 @@ $result = $connect->query($sql);
         <td><?=$item['name'] ?></td>
         <td><img src="images/<?=$item['image']?>" width="80" alt=""></td>
         <td><?=$item['price']?></td>
-        <td><?=$item['description']?></td>
+        <td width="400"><?=$item['description']?></td>
         <td>
             <?=$item['categories_name']?>
 

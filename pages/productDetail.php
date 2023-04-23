@@ -81,7 +81,7 @@
     if(isset($_GET['id'])){
         $productId=$_GET['id'];
         $comment=$connect->query("select * from member a join comments
-        b on a.id=b.memberId join products c on b.productId=c.id where productId=$productId");
+        b on a.id=b.memberId join products c on b.productId=c.id where productId=$productId and b.status=1");
         if(mysqli_num_rows($comment)==0):
             echo "<p class='text-gray-600'>No Comment!</p>";
         else:
