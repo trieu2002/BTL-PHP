@@ -4,6 +4,8 @@
  $sql="select * from categories";
  
  $result=$connect->query($sql);
+ 
+
  if(isset($_POST['btn'])){
     $name=$_POST['name'];
     $price=$_POST['price'];
@@ -16,13 +18,19 @@
         $file_name=$file['name'];
         move_uploaded_file($file['tmp_name'],'images/'.$file_name);
     }
-    
-    $sql1 = "INSERT INTO products(image,price,description,status,cateId,name) VALUES('$file_name',$price,'$desc1',$status,$id,'$name')";
-    if ($connect->query($sql1) === TRUE) {
-        echo "<script>alert('Thêm sản phẩm thành công!'); window.location.href = '?option=list-product';</script>";
-    } else {
-        echo "Lỗi: " . $connect->error;
+    $sql_check="select * from products where name='$name'";
+    $check_name=$connect->query($sql_check);
+    if(mysqli_num_rows($check_name)!=0){
+        echo "<script>alert('Tên sản phẩm đã tồn tại!');</script>";
+    }else{
+        $sql1 = "INSERT INTO products(image,price,description,status,cateId,name) VALUES('$file_name',$price,'$desc1',$status,$id,'$name')";
+        if ($connect->query($sql1) === TRUE) {
+            echo "<script>alert('Thêm sản phẩm thành công!'); window.location.href = '?option=list-product';</script>";
+        } else {
+            echo "Lỗi: " . $connect->error;
+        }
     }
+
     
 }
 

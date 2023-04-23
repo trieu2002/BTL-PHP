@@ -277,7 +277,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="?option=categories" class="nav-link">
+                                    <a href="?option=list-categories" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Danh sách danh mục</p>
                                     </a>
@@ -325,12 +325,6 @@
                                         <p>Danh sách tài khoản User</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="?option=add-user" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Thêm tài khoản User</p>
-                                    </a>
-                                </li>
 
 
                             </ul>
@@ -353,7 +347,7 @@
                                 <li class="nav-item">
                                     <a href="?option=list-comment" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Thêm tài khoản User</p>
+                                        <p>Chi tiết đơn hàng</p>
                                     </a>
                                 </li>
 
@@ -405,6 +399,19 @@
                             break;
                          case 'list-user':
                             include "./modules/user/list-user.php";
+                            break;
+                         case 'user-delete':
+                            include "./modules/user/delete-user.php";
+                            break;
+                         case 'list-categories':
+                            include "./modules/categories/list-categories.php";
+                            break;
+
+                        case 'categories-delete':
+                            include "./modules/categories/delete-categories.php";
+                            break;
+                        case 'add-categories':
+                            include "./modules/categories/add-categories.php";
                             break;
                           
  
