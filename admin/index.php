@@ -400,6 +400,9 @@
                           case 'comments-edit':
                             include "./modules/comments/comment-edit.php";
                             break;
+                          case 'comments-delete':
+                            include "./modules/comments/comment-delete.php";
+                            break;
                           
  
                         }
