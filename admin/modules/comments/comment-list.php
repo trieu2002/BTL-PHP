@@ -25,7 +25,8 @@ $result=$connect->query($sql);
         <td><?=$item['id']?></td>
 
 
-        <td><?=$item['content']?></td>
+        <td><?php echo htmlspecialchars($item['content']); ?></td>
+
         <td><?=$item['date']?></td>
         <td><?=$item['nameMember']?></td>
         <td><?=$item['nameProduct']?></td>
@@ -38,9 +39,9 @@ $result=$connect->query($sql);
         </td>
         <td>
 
-            <a href="?option=product-edit&id=<?php echo $item['id'] ?>" class="btn btn-primary"><i
+            <a href="?option=comments-edit&id=<?php echo $item['id'] ?>" class="btn btn-primary"><i
                     class="fa fa-edit"></i></a>
-            <a href="?option=product-delete&id=<?php echo $item['id']?>"
+            <a href="?option=comments-delete&id=<?php echo $item['id']?>"
                 onclick="return confirm('Bạn chắc chắn muốn xóa ?');" class="btn btn-danger"><i
                     class="fa fa-trash"></i></a>
 

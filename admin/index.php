@@ -397,6 +397,9 @@
                           case 'list-comment':
                                  include "./modules/comments/comment-list.php";
                                  break;
+                          case 'comments-edit':
+                            include "./modules/comments/comment-edit.php";
+                            break;
                           
  
                         }

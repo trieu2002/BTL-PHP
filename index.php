@@ -69,9 +69,9 @@
                         include "./pages/check-out.php";
                         break;
                     case '*':
-                            include "./pages/pageError.php";
+                        include "./pages/pageError.php";
                             break;
-                        default:
+                    default:
                             include "./pages/pageError.php";
                             break;
                     

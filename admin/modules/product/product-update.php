@@ -41,7 +41,7 @@
 <div class="container">
     <div class="col-sm-8">
         <h2 class="">Update sản phẩm</h2>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" value="<?=$arrayList['name']?>" class="form-control" name="name"
