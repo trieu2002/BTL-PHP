@@ -1,6 +1,6 @@
 <?php
 include "./db/connect.php";
-$sql="select * from categories where status=1";
+$sql="select * from categories";
 $result=$connect->query($sql);
 
 

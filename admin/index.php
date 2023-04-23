@@ -253,13 +253,14 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="?option=list-product" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-list-ul"></i>
                                         <p>Danh sách sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="?option=add-product" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-plus-square"></i>
+
                                         <p>Thêm sản phẩm</p>
                                     </a>
                                 </li>
@@ -278,13 +279,13 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="?option=list-categories" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-list-alt"></i>
                                         <p>Danh sách danh mục</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="?option=add-categories" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-plus-square"></i>
                                         <p>Thêm danh mục</p>
                                     </a>
                                 </li>
@@ -302,7 +303,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="?option=list-comment" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-list-alt"></i>
                                         <p>Danh sách bình luận</p>
                                     </a>
                                 </li>
@@ -321,7 +322,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="?option=list-user" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fas fa-user-plus"></i>
                                         <p>Danh sách tài khoản User</p>
                                     </a>
                                 </li>
@@ -412,6 +413,9 @@
                             break;
                         case 'add-categories':
                             include "./modules/categories/add-categories.php";
+                            break;
+                        case 'categories-edit':
+                            include "./modules/categories/edit-categories.php";
                             break;
                           
  

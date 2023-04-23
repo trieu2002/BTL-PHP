@@ -1,4 +1,4 @@
-<div class="w-[1170px] mx-auto  py-[5px] flex align-center justify-between">
+<div class="w-[1170px] mx-auto  py-[5px] flex align-center justify-between res">
 
     <h1 class="text-white text-[15px]">Chào mừng bạn đến với Tobee Food!</h1>
 
