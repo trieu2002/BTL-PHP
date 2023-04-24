@@ -8,7 +8,7 @@
  }
  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'clearCart') {
     unset($_SESSION['cart']);
-    header('Location: ?option=home');
+    header('Location: ?option=view-cart');
     exit;
   }
   if(isset($_POST['id'])){

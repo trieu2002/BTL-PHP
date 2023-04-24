@@ -10,7 +10,7 @@ include "db/connect.php";
     $result=$connect->query($sql);
     
     if(mysqli_num_rows($result)==0){
-        $err['error']="Tên tài khoản or mật khẩu không đúng";
+        $err['error']="Tên tài khoản or mật khẩu không đúng";   
     }else{
         $result=mysqli_fetch_array($result);
         var_dump($result);

@@ -7,16 +7,20 @@ if(isset($_POST['btn'])){
     $err=[];
     $password=$_POST['password'];
 
-    $sql="select * from member where username='$username' and password='$password and  stutus=1'";
+    $sql="select * from member where username='$username' and password='$password '";
     $result=$connect->query($sql);
     if(mysqli_num_rows($result)==0){
         $err['error']="Tên tài khoản or mật khẩu không đúng";
     }else{
         $result=mysqli_fetch_array($result);
-        $_SESSION['member']=$result['username'];
-        $_SESSION['id']=$result['id'];
-         header('location:?option=home');
-         exit;
+        if($result['status']==1){
+            $_SESSION['member']=$result['username'];
+          $_SESSION['id']=$result['id'];
+          header('location:?option=home');
+          exit;
+        }else{
+             $err['error']="Tài khoản hiện tại đang bị khóa";
+        }
         
     }
 
