@@ -92,7 +92,7 @@ $result = $connect->query($sql);
         <?php if ($current_page > 1) : ?>
         <li class="page-item">
             <a class="page-link"
-                href="?option=list-product&page=<?php echo $current_page - 1;?><?php echo !empty($search) ? "&search=$search" : ""; ?>">Next</a>
+                href="?option=list-product&page=<?php echo $current_page - 1;?><?php echo !empty($search) ? "&search=$search" : ""; ?>">Prev</a>
 
         </li>
         <?php endif; ?>

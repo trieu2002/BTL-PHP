@@ -29,7 +29,7 @@
 
         <?php include "./components/Header.php" ?>
     </div>
-    <div class="w-[100%] bg-green-500 h-[50px]">
+    <div class="w-[100%] bg-green-500 h-[50px]" id="fix">
         <?php include "./components/Nav.php"; ?>
 
         <div class="w-[100%] bg">
@@ -91,6 +91,19 @@
         <?php include "./components/copyright.php"; ?>
 
     </div>
+
+    <script>
+    const fix = document.querySelector('#fix');
+    console.log(fix)
+    window.addEventListener('scroll', function() {
+        const viTri = document.documentElement.scrollTop;
+        if (viTri > 300) {
+            fix.classList.add('active');
+        } else {
+            fix.classList.remove('active');
+        }
+    })
+    </script>
 </body>
 
 </html>
