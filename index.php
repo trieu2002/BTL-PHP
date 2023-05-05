@@ -94,7 +94,7 @@
 
     <script>
     const fix = document.querySelector('#fix');
-    console.log(fix)
+
     window.addEventListener('scroll', function() {
         const viTri = document.documentElement.scrollTop;
         if (viTri > 300) {
