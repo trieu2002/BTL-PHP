@@ -340,20 +340,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="?option=list-comment" class="nav-link">
+                                    <a href="?option=list-orders" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Danh đơn hàng</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="?option=list-comment" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Chi tiết đơn hàng</p>
-                                    </a>
-                                </li>
+
 
 
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="?option=thongKe" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    Thống kê
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+
                         </li>
 
 
@@ -417,7 +422,15 @@
                         case 'categories-edit':
                             include "./modules/categories/edit-categories.php";
                             break;
-                          
+                        case 'list-orders':
+                            include "./modules/orders/list-oders.php";
+                            break;
+                        case 'order-detail':
+                            include "./modules/orders/order-detail.php";
+                            break;
+                        case 'thongKe':
+                            include "./modules/thongKe/thongKe.php";
+                            break;
  
                         }
  
