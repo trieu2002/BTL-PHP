@@ -1,40 +1,41 @@
 <?php
-$count=0;
-$cart=isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-$total=0;
-foreach($cart as $item){
-   $total+=$item['qty']*$item['price'];
+$count = 0;
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+$total = 0;
+foreach ($cart as $item) {
+    $total += $item['qty'] * $item['price'];
 }
- 
 
-?>
-<?php 
-   include "db/connect.php";
- if(isset($_POST['btn'])){
-   $user_id=$_SESSION['id'];
-   $fullName=$_POST['fullName'];
-   $email=$_POST['email'];
-   $phone=$_POST['phone'];
-   $address=$_POST['address'];
-   $note=$_POST['note'];
-   $sql="insert into orders(user_id,note,fullName,email,address,phone) values('$user_id','$note','$fullName','$email','$address','$phone')";
-   $result=$connect->query($sql);
-   if($result){
-    
-    foreach($cart as $key=>$value){
-        $sql1="INSERT INTO orders_detail(product_id,price,quantity,image) 
-        VALUES('$value[id]','$value[price]','$value[qty]','$value[image]')";
-        $kq=$connect->query($sql1);
-        
+include "db/connect.php";
+
+if (isset($_POST['btn'])) {
+    $user_id = $_SESSION['id'];
+    $fullName = $_POST['fullName'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $note = $_POST['note'];
+    $currentDateTime = date('Y-m-d H:i:s');
+    // Sử dụng NOW() để lấy ngày hiện tại
+    $sql = "INSERT INTO orders (user_id, note, fullName, email, address, phone, ngayDat) 
+            VALUES ('$user_id', '$note', '$fullName', '$email', '$address', '$phone','$currentDateTime')";
+    $result = $connect->query($sql);
+
+    if ($result) {
+        $order_id = mysqli_insert_id($connect); // Sử dụng hàm mysqli_insert_id() để lấy id của bản ghi vừa chèn
+
+        foreach ($cart as $key => $value) {
+            $sql1 = "INSERT INTO orders_detail (product_id, price, quantity, image, order_id) 
+                     VALUES ('$value[id]', '$value[price]', '$value[qty]', '$value[image]', '$order_id')";
+            $kq = $connect->query($sql1);
+        }
+
+        unset($_SESSION['cart']);
+
+        echo "<script>alert('Bạn đã đặt hàng thành công!');
+              window.location.href='?option=home';</script>";
     }
-    unset($_SESSION['cart']);
-
-    echo "<script>alert('Bạn đã đặt hàng thành công!');
-    window.location.href='?option=home';</script>";
 }
- }
- 
- 
 ?>
 <?php if(isset($_SESSION['member'])) :?>
 <div class="w-[1170px] mx-auto  mt-10">
