@@ -52,9 +52,7 @@ $result=$connect->query($sql);
 
             <a href="?option=comments-edit&id=<?php echo $item['id'] ?>" class="btn btn-primary"><i
                     class="fa fa-edit"></i></a>
-            <a href="?option=comments-delete&id=<?php echo $item['id']?>"
-                onclick="return confirm('Bạn chắc chắn muốn xóa ?');" class="btn btn-danger"><i
-                    class="fa fa-trash"></i></a>
+
 
 
         </td>

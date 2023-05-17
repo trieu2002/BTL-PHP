@@ -16,8 +16,8 @@ include "db/connect.php";
         var_dump($result);
         $_SESSION['admin']=$result['name'];
         $_SESSION['image']=$result['image'];
-         header('location:index.php');
-         exit;
+        header('location:index.php');
+        exit;
         
     }
 
@@ -62,7 +62,7 @@ body {
                     name="password"> <br> <br>
                 <input type="submit" name="btn" value="Đăng nhập" class="border bg-green-600
              border-green-600 w-[120px] px-[0px] text-white text-[16px] cursor-pointer
-                 h-[40px] text-center flex align-center justify-center hover:bg-[#fff] hover:text-green-800 ">
+                h-[40px] text-center flex align-center justify-center hover:bg-[#fff] hover:text-green-800 ">
             </form>
         </div>
     </div>
