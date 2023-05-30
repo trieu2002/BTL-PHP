@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-
+    <link rel="stylesheet" href="style.css">
 
     <title>Tobee Food</title>
 </head>
@@ -21,15 +21,18 @@
 }
 </style>
 
-<body>
-    <div class="w-[100%] bg-green-500">
+<body id="body">
+
+
+    <div class="w-[100%] bg-green-500" id="fix">
         <?php include "./components/MenuTop.php" ?>
     </div>
     <div class="w-[1170px] mx-auto">
 
         <?php include "./components/Header.php" ?>
     </div>
-    <div class="w-[100%] bg-green-500 h-[50px]" id="fix">
+
+    <div class="w-[100%] bg-green-500 h-[50px]">
         <?php include "./components/Nav.php"; ?>
 
         <div class="w-[100%] bg">
@@ -91,17 +94,26 @@
         <?php include "./components/copyright.php"; ?>
 
     </div>
-
+    <style>
+    .active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+    </style>
     <script>
     const fix = document.querySelector('#fix');
 
-    window.addEventListener('scroll', function() {
-        const viTri = document.documentElement.scrollTop;
-        if (viTri > 300) {
+    window.addEventListener('scroll', function(e) {
+        const scroll = window.scrollY;
+        if (scroll > 300) {
             fix.classList.add('active');
         } else {
             fix.classList.remove('active');
         }
+
+
     })
     </script>
 </body>

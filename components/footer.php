@@ -6,7 +6,7 @@
   
 ?>
 
-<div class="w-[1170px] mx-auto grid grid-cols-4 gap-8 mt-10">
+<div class="w-[1170px] mx-auto grid grid-cols-4 gap-8 mt-10 relative">
     <div>
         <h2 class="font-bold">NGUYÊN LIỆU PHA CHẾ</h2>
         <ul>
@@ -45,4 +45,8 @@
             <li>Khuyễn mãi đặc biệt</li>
         </ul>
     </div>
+
 </div>
+<style>
+
+</style>

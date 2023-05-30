@@ -66,7 +66,8 @@
                         <input type="hidden" name="option" value="cart">
                         <input type="hidden" name="action" value="remove">
                         <input type="hidden" name="id" value="<?=$value['id']?>">
-                        <button class=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                        <button onclick="confirm('Bạn chắc chắn muốn xóa')"
+                            class=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
                             Remove
                         </button>
                     </form>
