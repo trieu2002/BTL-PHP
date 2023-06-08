@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
    }
    if(isset($_POST['status'])){
        $status=$_POST['status'];
-       $sql="update from orders set status='$status' where id=$id";
+       $sql="update from orders set status=$status where id=$id";
        $arr=$connect->query($sql);
        header("location:?option=list-orders");
        
