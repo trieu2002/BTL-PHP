@@ -400,14 +400,17 @@
                           case 'comments-edit':
                             include "./modules/comments/comment-edit.php";
                             break;
-                          case 'comments-delete':
-                            include "./modules/comments/comment-delete.php";
+                          case 'comment-delete':
+                             include "./modules/comments/comment-delete.php";
                             break;
                          case 'list-user':
                             include "./modules/user/list-user.php";
                             break;
+                        case 'list-user':
+                            include "./modules/user/user-edit.php";
+                            break;
                          case 'user-delete':
-                            include "./modules/user/delete-user.php";
+                            include "./modules/user/user-delete.php";
                             break;
                          case 'list-categories':
                             include "./modules/categories/list-categories.php";

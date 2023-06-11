@@ -2,7 +2,7 @@
 $servername = "127.0.0.1:3307";
 $username = "root";
 $password = "";
-$db="php-haui";
+$db="commerce";
 
 // Create connection
 $connect = new MySQLi($servername, $username, $password,$db);

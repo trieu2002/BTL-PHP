@@ -6,6 +6,6 @@
     $result=$connect->query($sql);
   }
   if($result){
-    echo "<script>alert('Xóa bình luận thành công!');window.location.href='?option=list-categories';</script>";
+    echo "<script>alert('Xóa danh mục thành công!');window.location.href='?option=list-categories';</script>";
   }
 ?>

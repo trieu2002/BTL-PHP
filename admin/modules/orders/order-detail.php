@@ -3,22 +3,27 @@ $count = 1;
 include "db/connect.php";
 if(isset($_GET['id'])){
     $id = $_GET['id'];
+   
     $sql = "SELECT * FROM orders WHERE id=$id";
     $result = $connect->query($sql);
     $fetchArr = mysqli_fetch_array($result);
-   $sql="SELECT p.price, p.quantity, p.image, q.name FROM orders_detail p JOIN products q ON p.product_id=q.id where p.order_id=$id";
-   $arr=$connect->query($sql);
-   $tongTien=0;
-   foreach($arr as $item){
-     $tongTien+=$item['quantity']*$item['price'];
-   }
-   if(isset($_POST['status'])){
-       $status=$_POST['status'];
-       $sql="update from orders set status=$status where id=$id";
-       $arr=$connect->query($sql);
-       header("location:?option=list-orders");
+   
+    
+    $sql1="SELECT p.price, p.quantity, p.image, q.name FROM orders_detail p  JOIN products q ON p.product_id=q.id where p.order_id=$id";
+    $result=$connect->query($sql1);
+   
+    $tongTien=0;
+    foreach($result as $item){
+        $tongTien+=$item['quantity']*$item['price'];
+    }
+    if(isset($_POST['status'])){
+        $status=$_POST['status'];
+        $sql="UPDATE orders SET status=$status WHERE id=$id";
+        $result=$connect->query($sql);
+          header("location:?option=order-detail&id=$id"); // Add the order ID to the redirected URL
+        exit(); // Terminate the script after the redirect
        
-   }
+    }
 }
 ?>
 <div>
@@ -51,7 +56,7 @@ if(isset($_GET['id'])){
             </tr>
         </thead>
         <tbody>
-            <?php foreach($arr as $item) : ?>
+            <?php foreach($result as $item) : ?>
             <tr>
                 <td><?=$count++?></td>
                 <td><?=$item['name']?></td>
@@ -59,7 +64,7 @@ if(isset($_GET['id'])){
                     <img src="images/<?=$item['image']?>" width="80" alt="">
                 </td>
                 <td>
-                    <form method="post" action="?option=order-detail">
+                    <form method="post" action="?option=order-detail&id=<?=$fetchArr['id']?>">
                         <select name="status" class="p-2 border rounded">
                             <option value="0" <?php if($fetchArr['status'] == 0) echo "selected"; ?>>Chưa xử lý</option>
                             <option value="1" <?php if($fetchArr['status'] == 1) echo "selected"; ?>>Đã xử lý</option>
