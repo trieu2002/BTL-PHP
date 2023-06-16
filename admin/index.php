@@ -409,8 +409,9 @@
                         case 'list-user':
                             include "./modules/user/user-edit.php";
                             break;
-                         case 'user-delete':
-                            include "./modules/user/user-delete.php";
+                         case 'delete-user':
+                           include "./modules/user/delete-user.php";
+                           
                             break;
                          case 'list-categories':
                             include "./modules/categories/list-categories.php";
@@ -430,6 +431,9 @@
                             break;
                         case 'order-detail':
                             include "./modules/orders/order-detail.php";
+                            break;
+                        case 'delete-order':
+                            include "./modules/orders/delete-order.php";
                             break;
                         case 'thongKe':
                             include "./modules/thongKe/thongKe.php";

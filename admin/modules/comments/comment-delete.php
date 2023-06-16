@@ -8,7 +8,7 @@
     $result=$connect->query($sql);
     
     if($result){
-      echo "<script>alert('Xóa bình luận thành công!');window.location.href='?option=comment-list';</script>";
+      echo "<script>alert('Xóa bình luận thành công!');window.location.href='?option=list-comment';</script>";
     }
   }
   

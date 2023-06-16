@@ -22,7 +22,11 @@ $result=$connect->query($sql);
         <td class="border px-4 py-2"><?=$item['address']?></td>
         <td class="border px-4 py-2">
             <span class="badge <?=($item['status'] == 1) ? 'badge-success' : 'badge-danger'?>">
-                <?=($item['status'] == 1) ? 'Đã xử lý' : 'Đang xử lý'?>
+                <?php  if($item['status']==0) echo "Chưa xử lý";
+          else if($item['status']==1) echo "Đã xử lý";
+          else if($item['status']==2) echo "Đang giao hàng";
+          else if($item['status']==3) echo "Hủy";
+          else echo "Đã hoàn thành"; ?>
             </span>
         </td>
         <td class="border px-4 py-2"><?=$item['ngayDat']?></td>
@@ -30,6 +34,7 @@ $result=$connect->query($sql);
             <a href="?option=order-detail&id=<?php echo $item['id'] ?>" class="btn btn-primary">
                 <i class="fa fa-edit"></i>
             </a>
+
         </td>
     </tr>
     <?php endforeach ; ?>

@@ -38,6 +38,7 @@ if(isset($_GET['id'])){
           if($fetchArr['status']==0) echo "Chưa xử lý";
           else if($fetchArr['status']==1) echo "Đã xử lý";
           else if($fetchArr['status']==2) echo "Đang giao hàng";
+          else if($fetchArr['status']==3) echo "Hủy";
           else echo "Đã hoàn thành";
         ?></p>
     </div>
@@ -70,7 +71,9 @@ if(isset($_GET['id'])){
                             <option value="1" <?php if($fetchArr['status'] == 1) echo "selected"; ?>>Đã xử lý</option>
                             <option value="2" <?php if($fetchArr['status'] == 2) echo "selected"; ?>>Đang giao hàng
                             </option>
-                            <option value="3" <?php if($fetchArr['status'] == 3) echo "selected"; ?>>Đã hoàn thành
+                            <option value="3" <?php if($fetchArr['status'] == 3) echo "selected"; ?>>Hủy
+                            </option>
+                            <option value="4" <?php if($fetchArr['status'] == 4) echo "selected"; ?>>Đã hoàn thành
                             </option>
                         </select>
                         <button type="submit" class="px-4 py-2 bg-blue-500 text-red rounded">Cập nhật</button>
