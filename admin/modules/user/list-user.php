@@ -1,6 +1,6 @@
 <?php
 include "./db/connect.php";
-$sql="SELECT * FROM member WHERE status=1";
+$sql="SELECT * FROM member ";
 $result=$connect->query($sql);
 
 
@@ -41,7 +41,7 @@ $result=$connect->query($sql);
         </td>
         <td>
 
-            <a href="?option=user-edit&id=<?php echo $item['id'] ?>" class="btn btn-primary"><i
+            <a href="?option=user-update&id=<?php echo $item['id'] ?>" class="btn btn-primary"><i
                     class="fa fa-edit"></i></a>
             <a href="?option=delete-user&id=<?php echo $item['id']?>"
                 onclick="return confirm('Bạn chắc chắn muốn xóa ?');" class="btn btn-danger"><i

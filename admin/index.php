@@ -406,8 +406,8 @@
                          case 'list-user':
                             include "./modules/user/list-user.php";
                             break;
-                        case 'list-user':
-                            include "./modules/user/user-edit.php";
+                        case 'user-update':
+                            include "./modules/user/user-update.php";
                             break;
                          case 'delete-user':
                            include "./modules/user/delete-user.php";

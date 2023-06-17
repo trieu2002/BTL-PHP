@@ -12,10 +12,10 @@
  if(isset($_POST['btn'])){
     $id=$_GET['id'];
     $name = $_POST['name'];
-   $price = $_POST['price'];
-   $status = $_POST['status'];
-  $desc = $_POST['desc'];
-  $categories = $_POST['categories'];
+    $price = $_POST['price'];
+    $status = $_POST['status'];
+    $desc = $_POST['desc'];
+    $categories = $_POST['categories'];
   if($_FILES['image']['size']>0){
     $file=$_FILES['image'];
     $file_name=$file['name'];
